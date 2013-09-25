@@ -1,20 +1,19 @@
 #include <iostream>
 #include <cmath>
 
-int is_prime(int n)
+bool IsPrime(int n)
 {
 	float n2 = 1;
 	n2 = n;
 
+	// Check if n is prime by checking if numbers 2, ..., floor(sqrt(n)) divide it evenly.
 	int max = 1;
 	max = sqrt(n2);
 
-	int test = 2;
-	while (test <= max)
+	for(int test=2; test <= max; test++)
 	{
 		if ((n % test) == 0)
 			return 0;
-		test++;
 	}
 
 	return 1;
@@ -28,9 +27,11 @@ int main()
 
 	unsigned __int64 PrimeSum = 0;
 
+	// For each number less than two million, check if it's prime and add it to the sum if it is.
+	
 	for(int i=2; i < 2000000; i++)
 	{
-		if (is_prime(i))
+		if (IsPrime(i))
 			PrimeSum += i;
 	}
 	

@@ -1,13 +1,12 @@
 #include <iostream>
 #include <cmath>
 
-bool is_prime(int n)
+bool IsPrime(int n)
 {
 	float n2 = 1;
 	n2 = n;
 
-	// Check if n is prime by seeing if numbers 2, ..., m divide it evenly.
-	// We only need check up to the square root of n to see if it is prime.
+	// Check if n is prime by checking if numbers 2, ..., floor(sqrt(n)) divide it evenly.
 	int max = 1;
 	max = sqrt(n2);
 
@@ -25,10 +24,12 @@ int main()
 	std::cout << " -----------\n"
 		<< "Project Euler Problem #007 Solution\n"
 		<< " -----------\n\n";
+	
+	// Check if each number is prime until we reach 10001 primes.  Output every 1000 primes.
 
 	for(int current=2, PrimeCount=0; PrimeCount < 10001; current++)
 	{
-		if (is_prime(current))
+		if (IsPrime(current))
 		{
 			PrimeCount++;
 			if(PrimeCount % 1000 == 1)
