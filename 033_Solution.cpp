@@ -7,7 +7,7 @@ int main()
 		<< " -----------\n\n";
 
 	int numerator = 1, denominator=1;
-	
+
 	for(float n1=1, n2=1, d1=1, d2=1; n1 <= 9; n1++)
 	{
 		for(d1 = n2 = n1; n2 <= 9; d1++, n2++)

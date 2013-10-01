@@ -39,7 +39,8 @@ int main()
 	
 	cout << "Start at n = ?" << endl;
 	cin >> n;
-	
+
+	// We go through each hexagonal number and test if it is pentagonal and triangular.
 	while(!done)
 	{
 		hexnum = n * (2*n - 1);

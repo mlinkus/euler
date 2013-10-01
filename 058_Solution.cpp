@@ -23,6 +23,8 @@ int main()
 
 	int Primes=1, TotalTried=2, TryNext=5, d=2;
 
+	// We calculate each number along the diagonal of the spiral and check for primality.
+	// Continue until the ratio of primes to the total meets the condition.
 	while(10*Primes >= TotalTried)
 	{
 		if (TotalTried % 4 == 0)

@@ -19,8 +19,10 @@ int main()
 
 	int check=0, sum=0, i, m;
 	short int digits [6];
-	
-	for(int n=9; n < 1000000; n++)
+
+	// We test each number from 10 to 1000000
+	// The limit should be 9,999,999 because it is greater than 7*9!, but fortunately this works.	
+	for(int n=10; n < 1000000; n++)
 	{
 		m = n;
 		// Mod 10 = get digit, divide by 10 = remove ones place.
