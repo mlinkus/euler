@@ -16,15 +16,9 @@ int main()
 		{
 			// Only check fractions in lowest terms
 			if((n != 0) && (d % n != 0))
-			{
-				// Is this approximation to 3/7 better?
+				// Is this approximation to 3/7 better?  If so, store it as the new best approximation.
 				if(n*best_d - d*best_n > 0)
-				{
-					// If it is, it becomes the new best approximation.  Output it.
-					best_n = n;
-					best_d = d;
-				}
-			}
+					best_n = n, best_d = d;
 		}
 	}
 	
