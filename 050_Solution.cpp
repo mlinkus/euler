@@ -1,18 +1,14 @@
 #include <iostream>
-#include <cmath>
 
 bool is_prime(int n)
 {
 	// Check if n is prime by seeing if numbers 2, ..., m divide it evenly.
 	// We only need check up to the square root of n to see if it is prime.
-	int max = (int)sqrt((double)(n));
-
-	for(int test=2; test <= max; test++)
+	for(int test=2; test*test <= n; test++)
 	{
 		if ((n % test) == 0)
 			return 0;
 	}
-
 	return 1;
 }
 
