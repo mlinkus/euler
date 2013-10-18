@@ -7,6 +7,7 @@ Project Euler (http://projecteuler.net) is a collection of mathematical programm
 One may access a given problem by going to http://projecteuler.net/problem=XXX where XXX
 is the number of the problem.
 
-I currently have 44 of the problems solved, not all of them are included here.
-These were compiled with MinGW (http://www.mingw.org/).
+I currently have 45 of the problems solved, not all of them are included here.
+Code mostly written with Notepad++ (http://notepad-plus-plus.org/).
+Programs compiled and built with MinGW (http://www.mingw.org/).
 Please download the .DLL files to run the executables.
