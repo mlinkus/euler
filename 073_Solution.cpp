@@ -1,14 +1,6 @@
 #include <iostream>
 
-// Using Farey Sequences, see 073_Solution_Alt for slower bruteforce version.
-
-int gcd(int a, int b)
-{
-	if (b == 0)
-		return a;
-	else
-		return gcd(b, a % b);
-}
+// Alternate version using Farey Sequences.
 
 int main()
 {
