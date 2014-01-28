@@ -1,5 +1,7 @@
 #include <iostream>
 
+// Using Farey Sequences, see 073_Solution_Alt for slower bruteforce version.
+
 int gcd(int a, int b)
 {
 	if (b == 0)
@@ -14,20 +16,30 @@ int main()
 		<< "Project Euler Problem #073 Solution\n"
 		<< " -----------\n\n";
 
-	int fractions = 0;
-	
-	// For each denominator d = 1, 2, ..., 12000
-	for(int n=1, d=2; d <= 12000;d++)
+	int count = 0;
+	// Maximum denominator.
+	int limit = 12000;
+	// Lower limit numerator and denominator.
+	int a = 1, b = 3;
+	// Next neighbor of 1/3 to the left.
+	int c = 4000, d = 11999;
+	// Working variables, e and f are numerators and denominators of a fraction.
+	int e = 0, f = 0, k = 0;
+
+	// Find the next fraction in the Farey Sequence.  Proceed until we hit the upper limit.
+	while(!(c == 1 && d == 2))
 	{
-		// Get a numerator to make n/d just above 1/3, proceed until n/d >= 1/2
-		for(n = (d*1/3 + 1); n*2 < d; n++)
-		{
-			if (gcd(d, n) == 1)
-				fractions++;
-		}
+		count++;
+		k = (limit + b) / d;
+		e = k*c - a;
+		f = k*d - b;
+		a = c;
+		b = d;
+		c = e;
+		d = f;
 	}
 	
-	std::cout << "Total fractions between 1/3 and 1/2: " << fractions;
+	std::cout << "Total fractions between 1/3 and 1/2: " << count;
 
 	return 0;
  }
